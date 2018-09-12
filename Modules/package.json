@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "node launch-tests.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1"
+  }
+}
