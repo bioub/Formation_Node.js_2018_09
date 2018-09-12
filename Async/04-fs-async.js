@@ -45,6 +45,7 @@ log(logFile, 'Ligne 1', (err) => {
         return console.log(err);
       }
 
+      console.log('DONE');
     });
 
   });

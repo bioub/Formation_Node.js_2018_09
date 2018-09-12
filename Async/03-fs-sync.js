@@ -24,6 +24,7 @@ try {
   log(logFile, 'Ligne 1');
   log(logFile, 'Ligne 2');
   log(logFile, 'Ligne 3');
+  console.log('DONE');
 }
 catch (err) {
   console.log(err);
