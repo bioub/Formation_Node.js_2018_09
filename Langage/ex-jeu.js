@@ -66,8 +66,8 @@ jouer();
 // ^
 // |
 // |                           question
-// |           question        jouer
-// |req - ci - jouer     ..... =>        ....
-// +----------------------------------------------> temps
+// |           question        jouer           rl.close
+// |req - ci - jouer     ..... =>        ....  =>
+// +---------------------------ENTREE----------ENTREE---------> temps
 //
 

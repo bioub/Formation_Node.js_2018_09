@@ -1,4 +1,5 @@
 function externe(msg) {
+  // msg = null; pour libérer la mémoire (si msg est volumineux)
   function interne() {
     console.log(msg);
   }
