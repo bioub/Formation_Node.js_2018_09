@@ -18,10 +18,14 @@ async function deleteAndCreateDist() {
 }
 
 async function buildJs() {
-  const bufferHorloge = await fs.readFile(horlogeJsPath);
-  await fs.appendFile(appJsDistPath, bufferHorloge);
-  const bufferIndex = await fs.readFile(indexJsPath);
-  await fs.appendFile(appJsDistPath, bufferIndex);
+  const buffers = await Promise.all([
+    fs.readFile(horlogeJsPath),
+    fs.readFile(indexJsPath)
+  ]);
+
+  for (const buffer of buffers) {
+    await fs.appendFile(appJsDistPath, buffer);
+  }
 }
 
 async function buildHtml() {
@@ -40,8 +44,10 @@ async function buildHtml() {
 async function build() {
   console.time('Build');
   await deleteAndCreateDist();
-  await buildJs();
-  await buildHtml();
+  await Promise.all([
+    buildJs(),
+    buildHtml(),
+  ]);
   console.timeEnd('Build');
 }
 
