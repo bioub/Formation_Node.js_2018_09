@@ -1,5 +1,4 @@
 const fs = require('fs-extra');
-const async = require('async');
 
 const path = require('path');
 const logDir = path.resolve(__dirname, 'logs');

@@ -9,6 +9,22 @@ function log(file, msg) {
   fs.appendFileSync(file, line);
 }
 
+/*
+function createDirIfNotExists(logDir) {
+  try {
+    const stats = fs.statSync(logDir);
+  }
+  catch (err) {
+    if (err.code === 'ENOENT') {
+      fs.mkdirSync(logDir);
+    } else {
+      throw err;
+    }
+  }
+}
+*/
+
+
 try {
   try {
     const stats = fs.statSync(logDir);

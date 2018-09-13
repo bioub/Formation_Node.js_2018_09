@@ -12,3 +12,37 @@ const indexHtmlPath = path.resolve(srcPath, 'index.html');
 const indexHtmlDistPath = path.resolve(distPath, 'index.html');
 const appJsDistPath = path.resolve(distPath, 'app.js');
 
+async function deleteAndCreateDist() {
+  await fs.remove(distPath);
+  await fs.mkdir(distPath);
+}
+
+async function buildJs() {
+  const bufferHorloge = await fs.readFile(horlogeJsPath);
+  await fs.appendFile(appJsDistPath, bufferHorloge);
+  const bufferIndex = await fs.readFile(indexJsPath);
+  await fs.appendFile(appJsDistPath, bufferIndex);
+}
+
+async function buildHtml() {
+  const buffer = await fs.readFile(indexHtmlPath);
+  let content = buffer.toString();
+
+  content = content.replace('<script src="./js/horloge.js"></script>', '');
+  content = content.replace(
+    '<script src="./js/index.js"></script>',
+    '<script src="./app.js"></script>',
+  );
+
+  await fs.writeFile(indexHtmlDistPath, content);
+}
+
+async function build() {
+  console.time('Build');
+  await deleteAndCreateDist();
+  await buildJs();
+  await buildHtml();
+  console.timeEnd('Build');
+}
+
+build();

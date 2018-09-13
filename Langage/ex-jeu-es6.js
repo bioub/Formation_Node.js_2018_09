@@ -44,9 +44,9 @@ class Jeu {
 
     this._rl.question('Quel est le nombre ? ', (answer) => {
 
-      const entierSaisi = parseInt(answer);
+      const entierSaisi = Number.parseInt(answer);
 
-      if (isNaN(entierSaisi)) {
+      if (Number.isNaN(entierSaisi)) {
         console.log('Erreur: il faut saisir un nombre');
         return this.jouer();
       }
