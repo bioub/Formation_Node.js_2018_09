@@ -1,18 +1,13 @@
-const express = require('express');
+const http = require('http')
+const app = require('./src/app');
+const config = require('./src/config');
 
-const app = express();
+const server = http.createServer(app);
 
-const contacts = [{
-  firstName: 'Jean',
-  lastName: 'Dupont',
-  id: '123',
-}, {
-  firstName: 'Eric',
-  lastName: 'Martin',
-  id: '456',
-}];
+server.on('error', (err) => {
+  console.log(err);
+});
 
-
-app.listen(8080, () => {
-  console.log('Server started');
+server.listen(config.port, () => {
+  console.log('Server started on port ' + config.port);
 });

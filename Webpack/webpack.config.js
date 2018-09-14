@@ -11,7 +11,7 @@ module.exports = (env, {mode}) => {
   ];
 
   return {
-    devtool: false,
+    devtool: 'source-maps',
     entry: './src/js/index.js',
     output: {
       filename: mode === 'development' ? '[name].js' : '[name].[chunkhash].js',

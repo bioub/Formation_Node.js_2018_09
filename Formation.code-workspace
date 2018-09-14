@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "Langage"
+		},
+		{
+			"path": "Modules"
+		},
+		{
+			"path": "Async"
+		},
+		{
+			"path": "Exercice-Build"
+		},
+		{
+			"path": "Webpack"
+		},
+		{
+			"path": "NodeWeb"
+		},
+		{
+			"path": "ExpressTraditionnel"
+		},
+		{
+			"path": "ExpressRest"
+		}
+	],
+	"settings": {}
+}

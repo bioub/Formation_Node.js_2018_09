@@ -51,4 +51,4 @@ async function build() {
   console.timeEnd('Build');
 }
 
-build();
+build().catch((err) => console.log(err));
