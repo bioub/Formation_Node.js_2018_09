@@ -1,13 +1,22 @@
 {
   "dependencies": {
     "express": "^4.16.3",
+    "mongoose": "^5.2.14",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "nyc": "^13.0.1",
+    "sinon": "^6.3.3",
+    "sinon-chai": "^3.2.0"
   },
   "scripts": {
     "start": "node .",
-    "start:dev": "nodemon ."
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
+    "start:dev": "nodemon .",
+    "test": "mocha --recursive",
+    "coverage": "nyc npm run test"
   }
 }

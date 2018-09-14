@@ -8,6 +8,8 @@ router.get('/',
 );
 
 router.post('/',
+  // authenticate,
+  // authorize('admin'),
   express.json(),
   ctrl.create,
 );
